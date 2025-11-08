@@ -1,10 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://jlmxvdefwmi1"]
+[gd_scene load_steps=11 format=3 uid="uid://jlmxvdefwmi1"]
 
 [ext_resource type="Script" uid="uid://do38fduod7aft" path="res://scripts/actors/SkeletonEnemy.gd" id="1_nxf4e"]
+[ext_resource type="Texture2D" uid="uid://bceh8a3avrbjg" path="res://assets/sprites/characters/enemigos/skeleton/walk-skeleton.png" id="2_i7ixv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsc4n"]
+atlas = ExtResource("2_i7ixv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtk3k"]
+atlas = ExtResource("2_i7ixv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6sky"]
+atlas = ExtResource("2_i7ixv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6t58"]
+atlas = ExtResource("2_i7ixv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfbkk"]
+atlas = ExtResource("2_i7ixv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjuoj"]
+atlas = ExtResource("2_i7ixv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yp1y0"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle_skeleton",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsc4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtk3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6sky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6t58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfbkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjuoj")
+}],
+"loop": true,
+"name": &"walk_skeleton",
+"speed": 9.0
+}]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_onvpl"]
 
 [node name="SkeletonEnemy" type="CharacterBody2D"]
 script = ExtResource("1_nxf4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yp1y0")
+animation = &"walk_skeleton"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_onvpl")
