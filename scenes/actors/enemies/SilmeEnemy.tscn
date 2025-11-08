@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c25wcce4mwihf"]
+
+[ext_resource type="Script" uid="uid://chu5pah1aqu57" path="res://scripts/actors/SlimeEnemy.gd" id="1_sjqs6"]
+
+[node name="SilmeEnemy" type="CharacterBody2D"]
+script = ExtResource("1_sjqs6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

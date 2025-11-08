@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://yty8rcgffv0u"]
+
+[ext_resource type="Script" uid="uid://chropyyncwbi7" path="res://scenes/main/Main.gd" id="1_u1xfj"]
+[ext_resource type="Script" uid="uid://ca8ywwqi5n28g" path="res://scripts/managers/LevelManager.gd" id="2_nha0i"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_u1xfj")
+
+[node name="GameUI" type="CanvasGroup" parent="."]
+
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("2_nha0i")
+
+[node name="CurrentLevel" type="Node2D" parent="."]
